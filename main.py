@@ -1,15 +1,11 @@
 # @author akil bhuiyan
 # @since 11/28/2020
 # @Version 1
-# @description every time we run this, it will send email to the selected recipient.
+# @description every time we run this, it will send emails to the selected recipients.
 
 from smtplib import SMTP
-
-my_email = ""
-my_password =""
-others_email = "", ""
-
-with SMTP("smtp.gmail.com") as connection:   # connection = SMTP("")
+from credentials import *
+with SMTP("smtp.gmail.com") as connection: 
     connection.starttls()
     connection.login(user=my_email, password=my_password)
     connection.sendmail(
